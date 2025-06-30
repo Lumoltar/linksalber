@@ -1,0 +1,118 @@
+<!-- Define que este documento usa HTML5, informa ao navegador qual versão do HTML está sendo usada — neste caso, HTML5 -->
+<!DOCTYPE html>
+<!-- Inicia o documento HTML e define o idioma como português -->
+ <!-- O atributo class="light" atribui a classe "light" ao elemento, permitindo aplicar estilos específicos definidos no CSS para essa classe -->
+<html lang="pt-br" class="light">
+  <!-- Contém metadados e informações do documento, como título, estilos e scripts, também coisas geralmente não visiveis na pagina, como configuraçoes -->
+  <head>
+    <!-- As tags <link rel="preconnect"> estabelecem conexões antecipadas com os servidores do Google Fonts, melhorando o desempenho no carregamento das fontes.
+A última tag <link> importa a fonte "Inter" do Google Fonts, permitindo seu uso no CSS da página -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Define a codificação de caracteres como UTF-8, como ç e acentos -->
+    <meta charset="UTF-8" />
+    <!-- Instrui o Internet Explorer a usar a versão mais recente do seu mecanismo de renderização -->
+    <meta http-equiv="X-UA-Compactible" content="ID=edge" />
+    <!-- Garante que o layout se ajuste corretamente em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Define o título da página exibido na aba do navegador, como se fosse o nome do projeto -->
+    <title>Document</title>
+    <!-- Importa o arquivo de estilos CSS externo para aplicar o design à página, no caso na propria pasta -->
+    <link rel="stylesheet" href="./estilo.css" />
+  </head>
+  <body>
+    <!-- A tag <div> é um contêiner genérico usado para agrupar elementos e estruturar o conteúdo da página, sem adicionar significado semântico por si só, a tag "id" serve como identificador para sabe qual é a caixa -->
+    <div id="container0">
+      <!--A tag de <div> abrindo um container dentro do container "container0", porém esse mesmo se identifica como "perfil" -->
+      <div id="perfil">
+        <!-- A tag <img> é usada para exibir uma imagem na página, e o atributo alt fornece um texto alternativo que é mostrado caso a imagem não carregue ou para leitores de tela -->
+        <img src="./IMAGENS/Avatar2.png" alt="Foto de Alber Mendes de perfil" />
+        <p>@albermendes</p>
+      </div>
+      <div>
+        
+        <div id="botão" onclick="toggleMode()">
+          <button>
+          </button>
+          <span>
+          </span>
+        </div>
+
+      </div>
+      <!-- A tag <ul> define uma lista não ordenada, onde os itens são marcados com pontos (ou outros marcadores) ao invés de números -->
+      <ul>
+        <!-- A tag <li> define um item dentro de uma lista, podendo ser usada dentro de <ul> (lista não ordenada) ou <ol> (lista ordenada) -->
+        <li>
+          <!-- A tag <a> é usada para criar um link. O atributo href define o endereço de destino, que pode ser uma página da web, um arquivo ou uma âncora dentro da própria página -->
+          <!-- O atributo target define onde o link será aberto. Por exemplo, target="_blank" abre o link em uma nova aba ou janela do navegador -->
+          <a href="https://www.facebook.com/albermc/" target="_blank"
+            >Facebook</a
+          >
+        </li>
+        <li>
+          <a href="https://github.com/Lumoltar" target="_blank">Git Hub</a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/albermendes/" target="_blank"
+            >Instagram</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/alber-mendes-correa-748a551ab/?originalSubdomain=br"
+            target="_blank"
+            >Linkedin</a
+          >
+        </li>
+        <li>
+          <a href="Link 4" target="_blank">Portfólio</a>
+        </li>
+        <li>
+          <a href="https://x.com/albmendescorrea" target="_blank"
+            >X / Twitter</a
+          >
+        </li>
+      </ul>
+      <!-- A tag <div id="ICONES REDES SOCIAIS"> define uma divisão (bloco) no HTML identificada pelo ID "ICONES REDES SOCIAIS", geralmente usada para agrupar e estilizar os ícones das redes sociais -->
+      <div id="icones-redes-sociais">
+        <a href="https://github.com/Lumoltar" target="_blank">
+        <!-- A tag <ion-icon> é usada para exibir ícones da biblioteca Ionicons. O atributo name="logo-github" indica que será exibido o ícone do GitHub -->
+        <ion-icon name="logo-github"></ion-icon>
+      </a>
+
+      <a href="https://www.instagram.com/albermendes/" target="_blank">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+
+      <a href="https://www.facebook.com/albermc/" target="_blank">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </a>
+
+      <a href="https://www.linkedin.com/in/alber-mendes-correa-748a551ab/?originalSubdomain=br" target="_blank">
+        <ion-icon name="logo-linkedin"></ion-icon>
+      </a>
+
+      <a href="https://x.com/albmendescorrea" target="_blank">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </a>
+
+      </div>
+
+      <footer>
+        Feito com ♥ por Alber Mendes
+      </footer>
+    </div>
+<!-- A tag <script type="module"> importa o módulo ES (JavaScript moderno) da biblioteca Ionicons a partir da CDN, permitindo o uso dos ícones com a tag <ion-icon> -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <!-- A tag <script type="module"> importa o módulo ES (JavaScript moderno) da biblioteca Ionicons a partir da CDN, permitindo o uso dos ícones com a tag <ion-icon> -->
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    ></script>
+    <script src="./script.js"></script>
+
+  </body>
+</html>

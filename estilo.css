@@ -1,0 +1,241 @@
+/* A tag <body> representa o corpo do documento HTML e, em CSS, é usada para aplicar estilos ao conteúdo principal da página, como texto, imagens e elementos visíveis na tela */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* O seletor :root representa o elemento raiz do documento (geralmente <html>) e é usado para definir variáveis CSS globais com --nome-da-variavel */
+:root {
+  --cor-do-texto: white;
+  --bg-url: url(./IMAGENS/bg-mobile.jpg);
+  --cor-botão: rgba(255, 255, 255, 0.5);
+  --cor-superficial: rgba(255, 255, 255, 0.05);
+  --cor-superficial-hover: rgba(0, 0, 0, 0, 0.02);
+  --cor-redes-sociais: rgba(255, 255, 255, 0.2);
+  --botão-imagem: url(./IMAGENS/MoonStars.svg);
+}
+/* O seletor .light aplica estilos a todos os elementos que possuem a classe "light" */
+.light {
+  --cor-do-texto: black;
+  --bg-url: url(./IMAGENS/bg-mobile-light.jpg);
+  --cor-botão: rgba(0, 0, 0, 0.5);
+  --cor-superficial: rgba(0, 0, 0, 0.05);
+  --cor-superficial-hover: rgba(0, 0, 0, 0, 0.02);
+  --cor-redes-sociais: rgba(0, 0, 0, 0.1);
+  --botão-imagem: url(./IMAGENS/Sun.svg);
+}
+
+body {
+  /* A propriedade background-image: url(...) é usada para definir uma imagem de fundo para um elemento, onde o valor url(...) indica o caminho da imagem que será exibida como plano de fundo */
+  background-image: var(--bg-url);
+  /* A propriedade background-repeat: no-repeat impede que a imagem de fundo se repita tanto horizontal quanto verticalmente, exibindo-a apenas uma vez no elemento */
+  background-repeat: no-repeat;
+  /* A propriedade background-position: top center; posiciona a imagem de fundo na parte superior e centralizada horizontalmente dentro do elemento */
+  background-position: top center;
+  /* A propriedade background-size: cover; faz com que a imagem de fundo cubra todo o elemento, ajustando seu tamanho proporcionalmente e podendo cortar partes da imagem para preencher completamente a área */
+  background-size: cover;
+  min-height: 100vh;
+  background-attachment: fixed;
+
+  /* Você pode resumir tudo acima em uma unica TAG, chamada popularmente de atalho, como "background: url(./IMAGENS/bg-mobile.jpg) no-repeat top center/cover; */
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--cor-do-texto);
+}
+/* O seletor body * aplica estilos a todos os elementos dentro do <body>.
+padding: 0 e margin: 0px removem espaçamentos padrão.
+box-sizing: border-box faz com que o tamanho total do elemento inclua padding e borda, facilitando o controle de layout */
+body * {
+  padding: 0;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+/* O símbolo # é usado em CSS para selecionar um elemento com um ID específico. Por exemplo, #menu seleciona o elemento que possui id="menu" no HTML */
+#container0 {
+  /* A propriedade width define a largura de um elemento. Pode ser especificada em unidades como px, %, em, entre outras */
+  width: 100%;
+  /* A propriedade height define a altura de um elemento. Pode ser especificada em unidades como px, %, em, entre outras "height: 712px;" */
+  max-width: 588px;
+  /* A propriedade border define a borda de um elemento, permitindo especificar a largura, o estilo (como solid, dashed, dotted) e a cor da borda */
+  /*border: 1px solid red;*/
+  /* A propriedade margin define o espaço externo ao redor de um elemento, afastando-o dos elementos vizinhos. Pode ser especificada em valores únicos ou múltiplos (ex: margin: 10px 20px) */
+  margin: 56px auto 0px;
+  /* A propriedade padding-top: 56px; define um espaçamento interno de 56 pixels no topo do elemento, afastando seu conteúdo da borda superior */
+  padding: 0 24px;
+  margin-top: 56px;
+}
+
+#perfil {
+  /* A propriedade text-align: center; centraliza horizontalmente o conteúdo textual (e elementos inline) dentro do elemento pai */
+  text-align: center;
+  /* A propriedade padding: 24px; aplica um espaçamento interno de 24 pixels em todos os lados (topo, direita, baixo e esquerda) do elemento */
+  padding: 24px;
+}
+/* O seletor #perfil img aplica estilos à imagem (<img>) que está dentro do elemento na HTML com o id "perfil" */
+#perfil img {
+  width: 112px;
+}
+#perfil p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  padding-top: 8px;
+}
+
+#botão {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#botão button {
+  width: 32px;
+  height: 32px;
+  background: white var(--botão-imagem) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  /* A propriedade position: absolute; posiciona o elemento de forma absoluta em relação ao ancestral mais próximo que tenha position diferente de static */
+  position: absolute;
+  /* A propriedade z-index: 1; define a ordem de empilhamento do elemento. Elementos com z-index maior ficam sobrepostos aos de z-index menor */
+  z-index: 1;
+
+  transform: translateY(-50%);
+  top: 50%;
+  left: 0;
+  animation: slide-back 0.3s;
+}
+
+.light #botão button {
+  animation: slide-in 0.4s forwards;
+}
+
+#botão button:hover {
+  outline: 8px solid var(--cor-redes-sociais);
+}
+
+#botão span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--cor-superficial);
+  border: 1px solid var(--cor-botão);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* LISTAS DE ITENS */
+/* O seletor ul aplica estilos a listas não ordenadas (<ul>), que são usadas para exibir itens com marcadores (bullets) */
+ul {
+  padding: 24px 0px;
+  /* A propriedade list-style: none; remove os marcadores (pontos, números, etc.) dos itens de lista (<ul> ou <ol>) */
+  list-style: none;
+  /* A propriedade display: flex; define o elemento como um contêiner flexível, permitindo organizar seus filhos em linha ou coluna com controle de alinhamento, espaçamento e distribuição */
+  display: flex;
+  /* A propriedade flex-direction: column; organiza os itens filhos de um contêiner flexível em uma coluna, ou seja, do topo para baixo em direção vertical */
+  flex-direction: column;
+  /* A propriedade gap: 16px; define um espaçamento de 16 pixels entre os itens filhos dentro de um contêiner flexível (ou grid), tanto na direção principal quanto na cruzada */
+  gap: 16px;
+}
+/* O seletor ul li a aplica estilos aos links (<a>) que estão dentro de itens de lista (<li>) de uma lista não ordenada (<ul>) */
+ul li a {
+  /* A propriedade display: flex; transforma o elemento em um contêiner flexível, permitindo organizar seus elementos filhos em linha ou coluna com maior controle de alinhamento e espaçamento */
+  display: flex;
+  /* A propriedade align-items: center; alinha os itens filhos de um contêiner flexível verticalmente ao centro do eixo transversal (geralmente o eixo vertical) */
+  align-items: center;
+  /* A propriedade justify-content: center; alinha os itens filhos de um contêiner flexível horizontalmente ao centro do eixo principal */
+  justify-content: center;
+  /* A propriedade padding: 16px 24px; define 16px de espaçamento interno no topo e na base, e 24px nas laterais esquerda e direita do elemento */
+  padding: 16px 24px;
+  /* A propriedade background: rgb(255, 255, 255, 0.1); define a cor de fundo com branco semi-transparente, onde o valor 0.1 indica 10% de opacidade */
+  background: var(--cor-superficial);
+  /* A propriedade border: 1px solid rgba(255, 255, 255, 0.5); cria uma borda sólida de 1 pixel de largura com cor branca semi-transparente (50% de opacidade) ao redor do elemento */
+  border: 1px solid var(--cor-botão);
+  /* A propriedade border-radius: 8px; arredonda os cantos do elemento, aplicando um raio de 8 pixels nas bordas */
+  border-radius: 8px;
+  /* A propriedade backdrop-filter: blur(4px); aplica um efeito de desfoque (blur) de 4 pixels ao fundo atrás do elemento, criando um visual translúcido e desfocado */
+  backdrop-filter: blur(4px);
+  /* A propriedade -webkit-backdrop-filter: blur(4px); é a versão com prefixo para navegadores WebKit (como Safari) que aplica um efeito de desfoque de 4 pixels ao fundo atrás do elemento */
+  -webkit-backdrop-filter: blur(4px);
+  /* A propriedade text-decoration: none; remove qualquer decoração do texto, como sublinhado, linha sobreposta ou riscado */
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.2s;
+}
+
+ul li a:hover {
+  background: var(--cor-superficial-hover);
+  border: 1.5px solid var(--cor-do-texto);
+}
+
+/* O seletor #icones-redes-sociais aplica estilos ao elemento que possui o atributo id="icones-redes-sociais". O símbolo # indica que se trata de um seletor de ID */
+#icones-redes-sociais {
+  /* A propriedade display: flex; transforma o elemento em um contêiner flexível, permitindo alinhar e distribuir seus elementos filhos de forma eficiente em linha ou coluna */
+  display: flex;
+  /* A propriedade gap: 16px; define um espaçamento de 16 pixels entre os itens filhos dentro de um contêiner flex (ou grid)
+  gap: 32px;*/
+  /* A propriedade padding: 24px 0px; aplica 24 pixels de espaçamento interno no topo e na base do elemento, e 0 pixels nas laterais */
+  padding: 24px 0px;
+  /* A propriedade font-size: 40px; define o tamanho da fonte como 40 pixels, aumentando o tamanho do texto dentro do elemento */
+  font-size: 24px;
+  /* A propriedade justify-content: center; alinha os itens filhos de um contêiner flexível horizontalmente ao centro do eixo principal */
+  justify-content: center;
+}
+/* O seletor #icones-redes-sociais a aplica estilos a todos os links (<a>) que estão dentro do elemento com id="icones-redes-sociais" */
+#icones-redes-sociais a {
+  /* A propriedade display: flex; transforma o elemento em um contêiner flexível, permitindo organizar seus elementos filhos em linha ou coluna com controle de alinhamento e espaçamento */
+  display: flex;
+  /* A propriedade align-items: center; alinha verticalmente ao centro os itens dentro de um contêiner flexível no eixo transversal */
+  align-items: center;
+  /* A propriedade justify-content: center; alinha horizontalmente ao centro os itens dentro de um contêiner flexível no eixo principal */
+  justify-content: center;
+  /* A propriedade padding: 16px; aplica um espaçamento interno de 16 pixels em todos os lados do elemento */
+  padding: 16px;
+  /* A propriedade transition: background 0.2s; cria uma transição suave de 0,2 segundos ao mudar a propriedade de background, proporcionando um efeito visual gradual */
+  transition: background 0.2s;
+  /* A propriedade border-radius: 50%; arredonda totalmente as bordas do elemento, transformando-o em uma forma circular (desde que largura e altura sejam iguais) */
+  border-radius: 50%;
+}
+
+#icones-redes-sociais a:hover {
+  background: var(--cor-redes-sociais);
+  padding: 16px;
+}
+
+footer {
+  padding: 24px 0px;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./IMAGENS/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./IMAGENS/bg-desktop-light.jpg);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+}
